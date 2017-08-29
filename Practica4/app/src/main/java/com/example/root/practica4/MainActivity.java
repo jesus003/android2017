@@ -11,7 +11,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast toast = Toast.makeText(getApplicationContext(),"el chuy",Toast.LENGTH_LONG);
+        String nombre = "Jesus";
+        String apellido = "Ontiveros";
+        Toast toast = Toast.makeText(getApplicationContext(),nombre+" "+apellido,Toast.LENGTH_LONG);
         toast.show();
     }
 }
