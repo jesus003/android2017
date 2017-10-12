@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <GridView
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:columnWidth="120dp"
+        android:horizontalSpacing="@dimen/espacio_grilla"
+        android:numColumns="auto_fit"
+        android:padding="@dimen/espacio_grilla"
+        android:verticalSpacing="@dimen/espacio_grilla"/>
+    <Button
+        android:id="@+id/button3"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="regresar"
+        android:text="Regresar" />
+</LinearLayout>
