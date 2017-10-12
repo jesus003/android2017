@@ -1,6 +1,8 @@
 package com.example.jesusontiveros.derechoaexamen;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -54,7 +56,8 @@ public class MainActivity extends Activity {
                         break;
                     case "5.Salir":
 
-                        finish();
+                        dialogCerrar();
+
                         break;
 
                 }
@@ -62,5 +65,22 @@ public class MainActivity extends Activity {
         });
     }
 
+    public void dialogCerrar() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Cerrar applicacion")
+                .setMessage("Seguro que desea cerrar la aplicacion?.")
+                .setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
+                    }
+                });
+        builder.show();
+    }
 }
