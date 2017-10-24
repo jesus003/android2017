@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="15dp">
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#C8C9CB" />
+
+    <Button
+        android:id="@+id/btnPagar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="96dp"
+        android:background="#d32f2f"
+        android:onClick="pagar"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="Pagar"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/txtAdeudo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtano"
+        android:layout_below="@+id/txtano"
+        android:layout_marginTop="15dp"
+        android:lineSpacingExtra="12sp"
+        android:text="Adeudo"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="12sp"
+        android:text="Metodo de pago:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/txtano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtModelo"
+        android:layout_below="@+id/txtModelo"
+        android:layout_marginTop="17dp"
+        android:lineSpacingExtra="12sp"
+        android:text="Año"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtModelo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtMarca"
+        android:layout_below="@+id/txtMarca"
+        android:layout_marginTop="14dp"
+        android:lineSpacingExtra="12sp"
+        android:text="Modelo "
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnPagar"
+        android:layout_below="@+id/divider"
+        android:layout_marginTop="22dp"
+        android:lineSpacingExtra="12sp"
+        android:text="Marca "
+        android:textSize="24sp" />
+
+    <RadioGroup
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="14dp"
+        android:layout_above="@+id/btnPagar"
+        android:layout_alignStart="@+id/btnPagar"
+        android:id="@+id/radioGroup">
+
+        <RadioButton
+            android:id="@+id/rdbEfectivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Efectivo" />
+
+        <RadioButton
+            android:id="@+id/rdbTarjeta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tarjeta de credito/debito" />
+    </RadioGroup>
+</RelativeLayout>
