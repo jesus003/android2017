@@ -3,6 +3,7 @@ package com.example.jesusontiveros.segundoexamen;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,7 +20,7 @@ public class inicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);lista = (ListView) findViewById(R.id.lista);
 
-        String[] companeros={"1.Leer placa","2.Vehiculos Afiliados","3.Acerca de","4.Cerrar sesión "};
+        String[] companeros={"1.Leer placa","2.Vehiculos Afiliados","3.Acerca de","4.Cerrar sesión"};
 
         ArrayAdapter<String> adaptador=new ArrayAdapter<String>(lista.getContext(),android.R.layout.simple_list_item_1,companeros);
         lista.setAdapter(adaptador);
@@ -42,57 +43,40 @@ public class inicio extends AppCompatActivity {
                         Intent i = new Intent(getBaseContext(), grid.class);
                         startActivity(i);
                         break;
-                    /*case "3.Dialogos":
-                        Intent d = new Intent(getBaseContext(), dialogos.class);
-                        startActivity(d);
-                        finish();
+                    case "3.Acerca de":
+                        dialog("Acerca de:","Jesus Ontiveros Ruiz - 3549");
                         break;
-                    case "4.Grid":
-                        Intent p = new Intent(getBaseContext(), principal.class);
+                    case "4.Cerrar sesión":
+                        Intent p = new Intent(getBaseContext(), MainActivity.class);
                         startActivity(p);
                         finish();
-                        break;*/
-                    case "5.Salir":
-
-                        dialogCerrar();
-
                         break;
+
 
                 }
             }
         });
     }
 
-    public void dialogCerrar() {
+    public void dialog(String titulo,String mensaje) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Cerrar applicacion")
-                .setMessage("Seguro que desea cerrar la aplicacion?.")
-                .setPositiveButton("SI", new DialogInterface.OnClickListener() {
+        builder.setTitle(titulo)
+                .setMessage(mensaje)
+                .setPositiveButton("Pagina Web", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/jesus003/android2017/"));
+                        startActivity(browserIntent);
                     }
                 })
-                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Cerrar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                     }
                 });
-        builder.show();
-    }
-    public void info(String data) {
-        final AlertDialog builder = new AlertDialog.Builder(this).create();
-        LayoutInflater inflater = this.getLayoutInflater();
-        View v = inflater.inflate(R.layout.infovehiculo, null);
-        builder.setView(v);
-
-        //String[] info = data.split(",");
-        TextView marca = (TextView) v.findViewById(R.id.txtMarca);
-        TextView modelo = (TextView) v.findViewById(R.id.txtModelo);
-        TextView ano = (TextView) v.findViewById(R.id.txtano);
-        TextView adeudo = (TextView) v.findViewById(R.id.txtAdeudo);
 
         builder.show();
     }
+
 }
